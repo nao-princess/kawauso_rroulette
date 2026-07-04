@@ -163,7 +163,7 @@ function startRoulette() {
         button.textContent = "🎲 もう1回！";
         button.disabled = false;
         isRunning = false;
-      }, 450);
+      }, 700);
     }
   }
 
