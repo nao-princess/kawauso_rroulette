@@ -89,36 +89,34 @@ function popButton() {
   }, 350);
 }
 
-// ぬいぐるみぷるぷる
 function shakeImage() {
   image.animate(
     [
-      { transform: "translateX(0) scale(1)" },
-      { transform: "translateX(-6px) scale(1.03)" },
-      { transform: "translateX(6px) scale(1.03)" },
-      { transform: "translateX(-4px) scale(1.02)" },
-      { transform: "translateX(4px) scale(1.02)" },
-      { transform: "translateX(0) scale(1)" }
+      { transform: "rotate(0deg) scale(1)" },
+      { transform: "rotate(-8deg) scale(1.08)" },
+      { transform: "rotate(8deg) scale(1.08)" },
+      { transform: "rotate(-6deg) scale(1.05)" },
+      { transform: "rotate(6deg) scale(1.05)" },
+      { transform: "rotate(0deg) scale(1)" }
     ],
     {
-      duration: 450,
+      duration: 700,
       easing: "ease-in-out"
     }
   );
 }
 
-// 決定時ぽよん
 function bounceImage() {
   image.animate(
     [
       { transform: "scale(1)" },
-      { transform: "scale(1.15)" },
-      { transform: "scale(0.96)" },
-      { transform: "scale(1.06)" },
+      { transform: "scale(1.25)" },
+      { transform: "scale(0.9)" },
+      { transform: "scale(1.12)" },
       { transform: "scale(1)" }
     ],
     {
-      duration: 550,
+      duration: 800,
       easing: "ease-out"
     }
   );
