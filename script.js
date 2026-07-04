@@ -70,7 +70,6 @@ function bounceImage() {
     }
   );
 }
-
 function startRoulette() {
   if (isRunning) return;
 
@@ -80,8 +79,9 @@ function startRoulette() {
   button.textContent = "🍡 選定中…";
   button.disabled = true;
 
-  title.textContent = "ぐるぐる中…";
-  comment.textContent = "今日のお団子を選んでいます。";
+  // ルーレット中はタイトルとコメントを消す
+  title.textContent = "";
+  comment.textContent = "";
 
   let count = 0;
   let speed = 60;
@@ -89,7 +89,9 @@ function startRoulette() {
 
   function spin() {
     const pose = getRandomPose();
-    showPose(pose);
+
+    // 画像だけ切り替える
+    image.src = pose.image;
 
     count++;
 
@@ -101,16 +103,13 @@ function startRoulette() {
       setTimeout(spin, speed);
     } else {
       const finalPose = getRandomPose();
+
+      // 最後だけタイトルとコメント表示
       showPose(finalPose);
 
-      shakeImage();
-
-      setTimeout(() => {
-        bounceImage();
-        button.textContent = "🎲 もう1回！";
-        button.disabled = false;
-        isRunning = false;
-      }, 700);
+      button.textContent = "🎲 もう1回！";
+      button.disabled = false;
+      isRunning = false;
     }
   }
 
