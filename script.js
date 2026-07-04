@@ -17,8 +17,8 @@ const poses = [
 
 {
     image:"pose2.png",
-    title:"勝利（本人談）",
-    comment:"異論は認めます。"
+    title:"見つめちゃうぞ💕",
+    comment:"かわいいは正義です。"
 },
 
 {
@@ -29,20 +29,20 @@ const poses = [
 
 {
     image:"pose4.png",
-    title:"圧",
-    comment:"見られています。"
+    title:"急いでます。",
+    comment:"新幹線より早い。"
 },
 
 {
     image:"pose5.png",
-    title:"定位置",
-    comment:"ここが落ち着くらしいです。"
+    title:"貫禄",
+    comment:"よっこらせっと。"
 },
 
 {
     image:"pose6.png",
-    title:"覚悟",
-    comment:"今日はこういう日です。"
+    title:"休憩",
+    comment:"動くのはあとで考えます。"
 }
 
 ];
