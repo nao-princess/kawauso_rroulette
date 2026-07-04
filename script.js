@@ -43,8 +43,32 @@ const poses = [
     image:"pose6.png",
     title:"休憩",
     comment:"動くのはあとで考えます。"
-}
+},
 
+{
+    image:"pose7.png",
+    title:"床との和解",
+    comment:"完全に馴染みました。"
+},
+
+    {
+    image:"pose8.png",
+    title:"あと５分",
+    comment:"あと５分したら絶対動くぞ、絶対に"
+},
+
+    {
+    image:"pose9.png",
+    title:"居酒屋",
+    comment:"やってる？"
+},
+
+   {
+    image:"pose10.png",
+    title:"プリンッ",
+    comment:"特に意味はありません。"
+}
+    
 ];
 
 // -------------------------
