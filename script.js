@@ -1,63 +1,16 @@
-// ===============================
-// 今日のお団子 script.js 完成版
-// ===============================
-
-// ポーズ一覧
 const poses = [
-  {
-    image: "pose1.png",
-    title: "虚無",
-    comment: "本人は満足そうです。"
-  },
-  {
-    image: "pose2.png",
-    title: "見つめちゃうぞ💕",
-    comment: "かわいいは正義です。"
-  },
-  {
-    image: "pose3.png",
-    title: "充電中",
-    comment: "触ると再起動します。"
-  },
-  {
-    image: "pose4.png",
-    title: "急いでます。",
-    comment: "新幹線より早い。"
-  },
-  {
-    image: "pose5.png",
-    title: "貫禄",
-    comment: "よっこらせっと。"
-  },
-  {
-    image: "pose6.png",
-    title: "休憩",
-    comment: "動くのはあとで考えます。"
-  }
-
-     {
-    image: "pose7.png",
-    title: "床との和解",
-    comment: "完全に馴染みました。"
-  },
-  {
-    image: "pose8.png",
-    title: "あと５分",
-    comment: "あと５分したら絶対動くぞ、絶対に。"
-  },
-  {
-    image: "pose9.png",
-    title: "居酒屋",
-    comment: "やってる？"
-  },
-  {
-    image: "pose10.png",
-    title: "プリンッ",
-    comment: "特に意味はありません。"
-  }
+  { image: "pose1.png", title: "虚無", comment: "本人は満足そうです。" },
+  { image: "pose2.png", title: "見つめちゃうぞ💕", comment: "かわいいは正義です。" },
+  { image: "pose3.png", title: "充電中", comment: "触ると再起動します。" },
+  { image: "pose4.png", title: "急いでます。", comment: "新幹線より早い。" },
+  { image: "pose5.png", title: "貫禄", comment: "よっこらせっと。" },
+  { image: "pose6.png", title: "休憩", comment: "動くのはあとで考えます。" },
+  { image: "pose7.png", title: "床との和解", comment: "完全に馴染みました。" },
+  { image: "pose8.png", title: "あと５分", comment: "あと５分したら絶対動くぞ、絶対に。" },
+  { image: "pose9.png", title: "居酒屋", comment: "やってる？" },
+  { image: "pose10.png", title: "プリンッ", comment: "特に意味はありません。" }
 ];
 
-// HTMLの要素を取得
 const image = document.getElementById("rouletteImage");
 const title = document.getElementById("title");
 const comment = document.getElementById("comment");
@@ -65,20 +18,16 @@ const button = document.getElementById("startButton");
 
 let isRunning = false;
 
-// ランダムに1つ選ぶ
 function getRandomPose() {
-  const randomIndex = Math.floor(Math.random() * poses.length);
-  return poses[randomIndex];
+  return poses[Math.floor(Math.random() * poses.length)];
 }
 
-// 画像・タイトル・コメントを表示
 function showPose(pose) {
   image.src = pose.image;
   title.textContent = pose.title;
   comment.textContent = pose.comment;
 }
 
-// ボタンぷにっ
 function popButton() {
   button.classList.remove("buttonPop");
   void button.offsetWidth;
@@ -122,20 +71,20 @@ function bounceImage() {
   );
 }
 
-// ルーレット本体
 function startRoulette() {
   if (isRunning) return;
 
   isRunning = true;
   popButton();
 
-  title.textContent = "ぐるぐる中…";
-  comment.textContent = "今日のお団子を選んでいます。";
   button.textContent = "🍡 選定中…";
   button.disabled = true;
 
+  title.textContent = "ぐるぐる中…";
+  comment.textContent = "今日のお団子を選んでいます。";
+
   let count = 0;
-  let speed = 55;
+  let speed = 60;
   const maxCount = 24;
 
   function spin() {
@@ -144,16 +93,14 @@ function startRoulette() {
 
     count++;
 
-    // 後半になるほど遅くする
-    if (count > 10) speed += 18;
-    if (count > 17) speed += 28;
-    if (count > 21) speed += 45;
+    if (count > 10) speed += 20;
+    if (count > 17) speed += 35;
+    if (count > 21) speed += 55;
 
     if (count < maxCount) {
       setTimeout(spin, speed);
     } else {
       const finalPose = getRandomPose();
-
       showPose(finalPose);
 
       shakeImage();
@@ -170,5 +117,4 @@ function startRoulette() {
   spin();
 }
 
-// ボタンクリックで開始
 button.addEventListener("click", startRoulette);
