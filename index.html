@@ -1,40 +1,29 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-
-    <title>今日のお団子</title>
-
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>今日のお団子</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <div class="container">
+  <div class="container">
 
-        <h1>今日のお団子</h1>
-<div class="imageArea">
-    <div id="imageWrapper">
-        <img id="rouletteImage" src="pose1.png" alt="お団子">
-    </div>
-</div>
-     
+    <h1>今日のお団子</h1>
 
-        <div id="title" class="poseTitle">
-            ・・・
-        </div>
-
-        <div id="comment" class="poseComment">
-            ボタンを押してね。
-        </div>
-
-        <button id="startButton">
-            🎲 ルーレットスタート
-        </button>
-
+    <div class="imageArea">
+      <img id="rouletteImage" src="pose1.png" alt="お団子" draggable="false">
     </div>
 
-    <script src="script.js"></script>
+    <div id="title" class="poseTitle">・・・</div>
 
+    <div id="comment" class="poseComment">ボタンを押してね。</div>
+
+    <button id="startButton">🎲 ルーレットスタート</button>
+
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
